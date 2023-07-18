@@ -2,7 +2,7 @@
   <div id="toDoList">
       <div class="toDoList_header">
         <input v-model="toDoText" type="text">
-        <button @click="addToDoItem">Добавить</button>
+        <button @click="addToDoItem"><font-awesome-icon icon="fa-solid fa-pencil" /></button>
       </div>
       <RenderToDoItems :toDoItems="toDoItems"/>
   </div>
@@ -40,3 +40,68 @@ export default {
   }
 }
 </script>
+
+<style>
+  body{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #de008de3, #790ca7);
+  }
+
+  #toDoList{
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .toDoList_header{
+    width: 90%;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .toDoList_header input{
+    border: none;
+    outline: none;
+
+    padding-left: 20px;
+    border-radius: 10px;
+
+    font-size: 18px;
+
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+  }
+
+  .toDoList_header button{
+    height: 40px;
+    width: 40px;
+
+    border-radius: 50%;
+    margin-left: 20px;
+
+    border: none;
+    cursor: pointer;
+
+    color: #93005ee3;
+    font-size: 14px;
+    background:  white;
+
+    transition: all 1s ease;
+  }
+
+  .toDoList_header button:hover{
+    color: white;
+    background: #e4029161;
+  }
+</style>

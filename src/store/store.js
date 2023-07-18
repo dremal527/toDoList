@@ -18,6 +18,12 @@ const store = new Vuex.Store({
     deleteItem({commit, state}, payload){
       const clearedList = state.toDoItems.filter(elem => elem.id !== payload)
       commit('setNewList', clearedList);
+    },
+    completeItem({commit, state}, payload){
+      let index = state.toDoItems.findIndex(elem => elem.id == payload);
+
+      if(index !== -1)
+        commit('completeItem', {index});
     }
   },
   mutations: {
@@ -26,6 +32,10 @@ const store = new Vuex.Store({
     },
     setNewList(state, payload){
       state.toDoItems = payload;
+    },
+    completeItem(state, payload){
+      state.toDoItems.push({...state.toDoItems[payload.index], state: 'completed'});
+      delete state.toDoItems[payload.index];
     }
   }
 });

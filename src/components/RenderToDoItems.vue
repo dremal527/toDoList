@@ -1,8 +1,11 @@
 <template>
   <div class="toDoList_body">
       <div class="toDoList_item" v-for="item in toDoItems" :key="item.id">
-        <span>{{ item.text }}</span>
-        <button @click="deleteItem(item.id)">Удалить</button>
+        <template v-if="item.state = 'created'">
+          <span>{{ item.text }}{{ item.state }}</span>
+          <button @click="completeItem(item.id)">Завершить</button>
+          <button @click="deleteItem(item.id)">Удалить</button>
+        </template>
       </div>
   </div>
 </template>
@@ -17,6 +20,9 @@ export default {
     }
   },
   methods:{
+    completeItem(itemId){
+      this.$store.dispatch('completeItem', itemId);
+    },
     deleteItem(itemId){
       this.$store.dispatch('deleteItem', itemId);
     }
