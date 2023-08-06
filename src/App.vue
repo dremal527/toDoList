@@ -55,13 +55,23 @@ export default {
     height: 100vh;
 
     display: flex;
+    justify-content: flex-start;
+    margin: 50px auto 0px auto;
+    align-items: center;
+    flex-direction: column;
+  }
+  .toDoList_body{
+    width: 100%;
+    max-width: 480px;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
 
   .toDoList_header{
-    width: 90%;
+    width: 100%;
+    max-width: 500px;
     height: 50px;
 
     display: flex;
@@ -103,5 +113,15 @@ export default {
   .toDoList_header button:hover{
     color: white;
     background: #e4029161;
+  }
+
+  .toDoList_item{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0px 0px 0px;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
   }
 </style>
