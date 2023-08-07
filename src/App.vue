@@ -42,11 +42,14 @@ export default {
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Ubuntu:wght@300;400&display=swap');
+
   body{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
     background: linear-gradient(45deg, #de008de3, #790ca7);
+    font-family: 'Ubuntu', sans-serif;
   }
 
   #toDoList{
@@ -115,13 +118,17 @@ export default {
     background: #e4029161;
   }
 
-  .toDoList_item{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 20px 0px 0px 0px;
-    padding: 10px;
-    background: white;
-    border-radius: 10px;
+  @media (max-width: 500px){
+    .toDoList_header{
+      flex-wrap: wrap;
+      height: auto;
+    }
+    .toDoList_header input{
+      width: 90%;
+    }
+    .toDoList_header button{
+      margin-top: 10px;
+      margin-left: 0px;
+    }
   }
 </style>

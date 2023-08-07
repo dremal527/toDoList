@@ -30,7 +30,7 @@ const store = new Vuex.Store({
     },
     completeItem(state, payload){
       this.commit('addToDoItems', {id: uuid.v1(), text: state.toDoItems[payload.index].text, state: 'completed'})
-      // state.toDoItems = state.toDoItems.filter(elem => elem.id !== payload.id)
+      state.toDoItems = state.toDoItems.filter(elem => elem.id !== payload.id)
     },
     changeItemValue(state, payload){
       state.toDoItems.map(item => {
